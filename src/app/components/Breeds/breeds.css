@@ -1,0 +1,55 @@
+.breed-title {
+  height: 4vw;
+  width: 100%;
+  background-color: rgb(215, 200, 186);
+  border: 0.3vw solid rgb(115, 106, 86);
+  border-radius: 1vw;
+  display: flex;
+  align-items: center;
+  margin-top: 2vw;
+}
+
+.breed-title h1 {
+  margin-left: 2vw;
+  font-family: 'Old Standard TT', serif;
+  margin-top: 1.5vw;
+  color: rgb(51, 46, 42);
+}
+
+.logo {
+  background-image: url(/public/assets/logo.png);
+  height: 6vw;
+  width: 6vw;
+  margin-left: 1vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#searching-bar {
+  margin-top: 1vw;
+  height: 2vw;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-family: 'Old Standard TT', serif;
+}
+
+input {
+  height: 3vw;
+  width: 100%;
+  font-style: italic;
+  background-color: rgba(215, 200, 186, 0.8);
+  border: 0.6vw double rgb(115, 106, 86);
+  border-radius: 0.5vw;
+  text-indent: 1.5vw;
+}
+
+.photo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
+}

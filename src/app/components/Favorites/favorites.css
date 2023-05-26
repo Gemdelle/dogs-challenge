@@ -1,0 +1,27 @@
+.favorites-title {
+  height: 4vw;
+  width: 100%;
+  background-color: rgb(215, 200, 186);
+  border: 0.3vw solid rgb(115, 106, 86);
+  border-radius: 1vw;
+  display: flex;
+  align-items: center;
+  margin-top: 2vw;
+}
+
+.favorites-title h1 {
+  margin-left: 2vw;
+  font-family: 'Old Standard TT', serif;
+  margin-top: 1.5vw;
+  color: rgb(92, 46, 46);
+}
+
+.logo-like {
+  background-image: url(/public/assets/liked.png);
+  height: 3vw;
+  width: 3vw;
+  margin-left: 0.4vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

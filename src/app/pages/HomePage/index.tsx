@@ -1,14 +1,28 @@
+/* eslint-disable prettier/prettier */
+import Breeds from 'app/components/Breeds';
+import Favorites from 'app/components/Favorites';
 import * as React from 'react';
-import { Helmet } from 'react-helmet-async';
 
-export function HomePage() {
+import './styles.css';
+import { useState } from 'react';
+
+export default function HomePage() {
+  const [searchedDogs, setSearchedDogs] = useState([]);
+  const [favoriteDogs, setFavoriteDogs] = useState([]);
+
   return (
-    <>
-      <Helmet>
-        <title>HomePage</title>
-        <meta name="description" content="A Boilerplate application homepage" />
-      </Helmet>
-      <span>My HomePage</span>
-    </>
+    <div className="container">
+      <title>Dogs Challenge</title>
+      <meta name="description" content="A Boilerplate application homepage" />
+      <Breeds
+        searchedDogs={searchedDogs}
+        setSearchedDogs={setSearchedDogs}
+        setFavoriteDogs={setFavoriteDogs}
+      />
+      <Favorites
+        favoriteDogs={favoriteDogs}
+        setFavoriteDogs={setFavoriteDogs}
+      />
+    </div>
   );
 }
