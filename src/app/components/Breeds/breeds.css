@@ -27,15 +27,6 @@
 }
 
 #searching-bar {
-  margin-top: 1vw;
-  height: 2vw;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  font-family: 'Old Standard TT', serif;
-}
-
-input {
   height: 3vw;
   width: 100%;
   font-style: italic;
@@ -43,6 +34,14 @@ input {
   border: 0.6vw double rgb(115, 106, 86);
   border-radius: 0.5vw;
   text-indent: 1.5vw;
+  color: black;
+  font-weight: 600;
+
+  margin-top: 1vw;
+  display: flex;
+  align-items: center;
+  font-family: 'Old Standard TT', serif;
+  text-transform: capitalize;
 }
 
 .photo-container {

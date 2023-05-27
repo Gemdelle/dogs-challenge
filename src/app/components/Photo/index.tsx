@@ -16,8 +16,7 @@ export default function Photo({ photoUrl, like }) {
       className="a-photo"
       onClick={likePic}
       style={{
-        backgroundImage:
-          'url("https://images.dog.ceo/breeds/weimaraner/n02092339_7606.jpg")',
+        backgroundImage: 'url("' + photoUrl + '")',
       }}
     >
       <div className={'like-logo ' + (isLiked ? 'liked' : 'not-liked')}></div>

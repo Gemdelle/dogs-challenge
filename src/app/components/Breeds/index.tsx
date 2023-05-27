@@ -8,7 +8,27 @@ export default function Breeds({
   searchedDogs,
   setSearchedDogs,
   setFavoriteDogs,
+  dogBreeds,
 }) {
+  const handleChange = async event => {
+    const query = event.currentTarget.value.split(' ').reverse().join('/');
+    const response = await fetch(
+      'https://dog.ceo/api/breed/' + query + '/images/random/10',
+    );
+    if (!response.ok) {
+      throw new Error('Data coud not be fetched!');
+    }
+    response.json().then(jsonResponse => {
+      const dogs = jsonResponse.message.map(dogUrl => {
+        return {
+          photoUrl: dogUrl,
+          isLiked: false,
+        };
+      });
+      setSearchedDogs(dogs);
+    });
+  };
+
   return (
     <div>
       <section>
@@ -17,24 +37,23 @@ export default function Breeds({
           <div className="logo"></div>
         </div>
 
-        <select name="" id="searching-bar" placeholder="Search for a breed...">
-          <option value=""></option>
+        <select
+          name=""
+          id="searching-bar"
+          placeholder="Search for a breed..."
+          onChange={handleChange}
+        >
+          {dogBreeds.map(breed => {
+            return (
+              <option value={breed.searchOption}>{breed.searchOption}</option>
+            );
+          })}
         </select>
 
         <div className="photo-container">
-          <Photo
-            photoUrl="https://images.dog.ceo/breeds/weimaraner/n02092339_7606.jpg"
-            like={false}
-          ></Photo>
-          <Photo photoUrl="" like={false}></Photo>
-          <Photo photoUrl="" like={false}></Photo>
-          <Photo photoUrl="" like={false}></Photo>
-          <Photo photoUrl="" like={false}></Photo>
-          <Photo photoUrl="" like={false}></Photo>
-          <Photo photoUrl="" like={false}></Photo>
-          <Photo photoUrl="" like={false}></Photo>
-          <Photo photoUrl="" like={false}></Photo>
-          <Photo photoUrl="" like={false}></Photo>
+          {searchedDogs.map(({ photoUrl, isLiked }) => {
+            return <Photo photoUrl={photoUrl} like={isLiked}></Photo>;
+          })}
         </div>
       </section>
     </div>
